@@ -1,0 +1,11 @@
+{
+  "name": "ventas-residencial",
+  "version": "1.0.0",
+  "description": "Sistema de ventas de Beta Residencial de desarrollos ISI.\r Esta página es un proyecto ficticio desarrollado en HTML, CSS y Javascript como parte de la clase de Desarrollo de Frontend.\r Este proyecto se encuentra en desarrollo, por lo cual la documentacion presentada a continuacion puede describir funcionalidad incompleta o en proceso de desarrollo.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Janeth Montero",
+  "license": "MIT"
+}
