@@ -4,8 +4,16 @@
   "description": "Sistema de ventas de Beta Residencial de desarrollos ISI.\r Esta página es un proyecto ficticio desarrollado en HTML, CSS y Javascript como parte de la clase de Desarrollo de Frontend.\r Este proyecto se encuentra en desarrollo, por lo cual la documentacion presentada a continuacion puede describir funcionalidad incompleta o en proceso de desarrollo.",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass": "node-sass assets/scss/styles.scss assets/css/styles.css --output-style expanded --watch",
+    "serve": "live-server",
+    "start": "concurrently  \" npm run watch:sass \" \" npm run serve \" "
   },
   "author": "Janeth Montero",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.1",
+    "live-server": "^1.2.2",
+    "node-sass": "^9.0.0"
+  }
 }

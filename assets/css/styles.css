@@ -58,13 +58,14 @@ h1 {
     flex-direction: column;
   }
 }
+
 header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: #3aa99e;
-  box-shadow: 0 8px 8px -4px rgb(186, 186, 186);
+  box-shadow: 0 8px 8px -4px #bababa;
   color: #fff;
   text-align: center;
   font-size: 1.25rem;
@@ -73,6 +74,7 @@ header {
   min-height: 88px;
   height: 88px;
 }
+
 header nav ul {
   display: block;
   text-transform: uppercase;
@@ -81,16 +83,19 @@ header nav ul {
   text-align: center;
   margin: 0;
 }
+
 header nav li {
   display: inline;
   margin-right: 2rem;
   padding: 0.5rem 2rem;
   transition: color 0.3s ease;
 }
+
 header nav li:hover {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 5px;
 }
+
 header nav a {
   text-decoration: none;
   color: #fff;
@@ -107,6 +112,7 @@ header nav a {
     margin-right: 1rem;
   }
 }
+
 @media screen and (max-width: 450px) {
   header {
     text-align: center;
@@ -121,5 +127,3 @@ header nav a {
     margin-right: 0;
   }
 }
-
-/*# sourceMappingURL=styles.css.map */
