@@ -1,10 +1,13 @@
+$color-primario: hsl(210, 29%, 29%);
+$color-secundario: hsl(204, 70%, 53%);
+$color-terciario: hsl(167, 40%, 55%);
+
 $background-color: #f3f6f9;
 $font-family: 'Jost', sans-serif;
 $font-size: 14px;
-$font-color: #252f4a;
+$font-color: hsl(210, 29%, 22%);
+$font-color-light: #fff;
 
-$header-background-color: #3aa99e;
-$header-font-color: #fff;
 $header-height: 88px;
 
 $workarea-background-color: #ffffff;

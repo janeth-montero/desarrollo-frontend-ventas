@@ -9,7 +9,7 @@ body {
   background-color: #f3f6f9;
   font-family: "Jost", sans-serif;
   font-size: 14px;
-  color: #252f4a;
+  color: #283848;
   margin: 0;
 }
 
@@ -64,7 +64,7 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #3aa99e;
+  background-color: #5ebaa6;
   box-shadow: 0 8px 8px -4px #bababa;
   color: #fff;
   text-align: center;

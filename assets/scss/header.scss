@@ -3,9 +3,9 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: $header-background-color;
+  background-color: $color-terciario;
   box-shadow: 0 8px 8px -4px rgb(186, 186, 186);
-  color: $header-font-color;
+  color: $font-color-light;
   text-align: center;
   font-size: 1.25rem;
   line-height: 1.25rem;
@@ -38,7 +38,7 @@ header {
 
       a {
         text-decoration: none;
-        color: $header-font-color;
+        color: $font-color-light;
         font-weight: bold;
       }
 
