@@ -57,29 +57,33 @@ Estructura inicial del proyecto basada en componentes:
 
 ```bash
 
-Ventas/               # Carpeta principal del proyecto
+Ventas/                   # Carpeta principal del proyecto
 │
-├── assets/           # Carpeta que almacena archivos estáticos.
-│   ├── scss/         # Carpeta para archivos de SASS
-│   ├── css/          # Carpeta para archivos CSS compilados
-│   └── img/          # Carpeta para images estaticas
+├── src
+│   ├── assets/           # Carpeta que almacena archivos estáticos.
+│   │    ├── scss/        # Carpeta para archivos de SASS
+│   │    ├── css/         # Carpeta para archivos CSS compilados
+│   │    └── img/         # Carpeta para images estaticas
+│   │
+│   │
+│   ├── real-estate/      # Carpeta para el catalogo de modelos
+│   │    ├── index.html   # Página HTML de modelos
+│   │    ├── script.js    # JavaScript específico de modelos
+│   │    └── styles.scss  # Estilos SCSS específicos de modelos
+│   │
+│   │
+│   ├── sales/            # Recursos relacionados con la API (Tmp).
+│   │    ├── index.html   # Página HTML de ventas
+│   │    ├── script.js    # JavaScript específico de ventas
+│   │    └── styles.scss  # Estilos SASS específicos de ventas
+│   │
+│   │
+│   └─── index.html       # Archivo HTML principal con home
 │
 │
-├── real-estate/      # Carpeta para el catalogo de modelos
-│   ├── index.html    # Página HTML de modelos
-│   ├── script.js     # JavaScript específico de modelos
-│   └── styles.scss   # Estilos SCSS específicos de modelos
+├── README.md             # Documentación del proyecto
 │
-│
-├── sales/            # Recursos relacionados con la API (Tmp).
-│   ├── index.html    # Página HTML de ventas
-│   ├── script.js     # JavaScript específico de ventas
-│   └── styles.scss   # Estilos SASS específicos de ventas
-│
-│
-├── index.html        # Archivo HTML principal con home
-│
-├── README.md         # Documentación del proyecto
+├── package.json
 
 ```
 
