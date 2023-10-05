@@ -1,3 +1,4 @@
+//#region MODELO DE DATOS (MODELS)
 // Definir la clase RealEstate
 class RealEstate {
 
@@ -32,3 +33,94 @@ console.log(realEstateList[1]);
 // Accedemos datos con funcion forEach() de array
 console.log('Impresion en consola de elementos accesados con forEach(): ');
 realEstateList.forEach(item => {console.log(item)});
+
+//#endregion
+
+
+//#region VISTA DE LOS MODELOS EN HTML (VIEW)
+function displayTable(houses) {
+
+  clearTable();
+
+  showLoadingMessage();
+
+  setTimeout(() => {
+
+    if (houses.length === 0) {
+
+      showNotFoundMessage();
+
+    } else {
+
+        hideMessage();
+
+        const tablaBody = document.getElementById('data-table-body');
+
+        const imagePath = `../assets/img/real-estate/`;
+
+        houses.forEach(house => {
+
+          const row = document.createElement('tr');
+
+          row.innerHTML = `
+            <td> ${house.id} </td>
+            <td> <img src="${imagePath + house.image}" alt="${house.name}" width="100"> </td>
+            <td>${house.name}</td>
+            <td>${house.description}</td>
+            <td>${house.bedrooms}</td>
+            <td>${house.bathrooms}</td>
+            <td>${house.price}</td>
+            <td>${house.landArea}</td>
+            <td>${house.constructionArea}</td>
+          `;
+
+          tablaBody.appendChild(row);
+
+        });
+
+    }
+
+  }, 2000);
+
+}
+
+
+function clearTable() {
+  const tableBody = document.getElementById('data-table-body');
+
+  tableBody.innerHTML = '';
+}
+
+
+function showLoadingMessage() {
+  const messageNotFound = document.getElementById('message-not-found');
+
+  messageNotFound.innerHTML = 'Cargando...';
+
+  messageNotFound.style.display = 'block';
+}
+
+
+function showNotFoundMessage() {
+  const messageNotFound = document.getElementById('message-not-found');
+
+  messageNotFound.innerHTML = 'No se encontraron casas con el filtro proporcionado.';
+
+  messageNotFound.style.display = 'block';
+}
+
+
+function hideMessage() {
+  const messageNotFound = document.getElementById('message-not-found');
+
+  messageNotFound.style.display = 'none';
+}
+
+//#endregion
+
+
+//#region INICIALIZAMOS FUNCIONALIDAD (CONTROLLER)
+
+displayTable(realEstateList);
+
+//#endregion

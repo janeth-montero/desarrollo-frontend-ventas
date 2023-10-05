@@ -135,6 +135,7 @@ table {
         height: auto; }
 
 #message-not-found {
+  display: none;
   text-align: center;
   font-size: 1rem;
   padding: 2rem; }
