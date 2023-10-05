@@ -22,6 +22,46 @@
 
     <h1>MODELOS</h1>
 
+     <form id="filter-form">
+      <div id="filter-section">
+        <input type="text"   id="text" placeholder="Nombre o descripción">
+        <input type="number" id="bedrooms" placeholder="Número de habitaciones">
+        <input type="number" id="price-min" placeholder="Precio mínimo">
+        <input type="number" id="price-max" placeholder="Precio máximo">
+        <button type="submit" id="apply-filters">Aplicar filtros</button>
+        <button type="reset" id="reset-filters">Restablecer</button>
+      </div>
+    </form>
+
+    <br>
+
+    <div class="table-container">
+
+      <table id="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Recámaras</th>
+            <th>Baños</th>
+            <th>Precio</th>
+            <th>Terreno (m²)</th>
+            <th>Construcción (m²)</th>
+          </tr>
+        </thead>
+        <tbody id="data-table-body">
+          <!-- Aquí se generará la tabla dinámicamente -->
+        </tbody>
+      </table>
+
+    </div>
+
+    <div id="message-not-found">
+      <p>No hay casas disponibles en este momento.</p>
+    </div>
+
   </main>
 
   <script src="script.js"></script>
