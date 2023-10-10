@@ -141,6 +141,11 @@ function initButtonsHandler() {
     applyFilters();
   });
 
+  document.getElementById('reset-filters').addEventListener('click', () => {
+    document.querySelectorAll('input.filter-field').forEach(input => input.value = '');
+    applyFilters();
+  });
+
 }
 
 
