@@ -15,7 +15,6 @@ Antes de comenzar, asegúrate de que tengas instalados los siguientes requisitos
 - **Node.js**: Versión 12 o superior. Puedes descargarlo desde [nodejs.org](https://nodejs.org/).
 - **npm**: Versión 6 o superior. npm generalmente se instala junto con Node.js.
 
-
 ## Instalación del proyecto
 Una vez que tengas Node.js y npm instalados, sigue estos pasos para instalar y configurar el proyecto en tu entorno de desarrollo local:
 
@@ -60,7 +59,7 @@ Estructura inicial del proyecto basada en componentes:
 Ventas/                   # Carpeta principal del proyecto
 │
 ├── src
-│   ├── assets/           # Carpeta que almacena archivos estáticos.
+│   ├── assets/           # Carpeta que almacena archivos estáticos
 │   │    ├── scss/        # Carpeta para archivos de SASS
 │   │    ├── css/         # Carpeta para archivos CSS compilados
 │   │    └── img/         # Carpeta para images estaticas
@@ -72,10 +71,14 @@ Ventas/                   # Carpeta principal del proyecto
 │   │    └── styles.scss  # Estilos SCSS específicos de modelos
 │   │
 │   │
-│   ├── sales/            # Recursos relacionados con la API (Tmp).
+│   ├── sales/            # Carpeta de modulo de ventas
 │   │    ├── index.html   # Página HTML de ventas
 │   │    ├── script.js    # JavaScript específico de ventas
 │   │    └── styles.scss  # Estilos SASS específicos de ventas
+│   │
+│   │
+│   ├── shared/           # Carpeta con recursos compartidos y de uso generico
+│   │    └── utils.js     # JavaScript con funciones y utilidades genericas
 │   │
 │   │
 │   └─── index.html       # Archivo HTML principal con home
