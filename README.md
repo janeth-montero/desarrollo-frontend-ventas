@@ -67,14 +67,12 @@ Ventas/                   # Carpeta principal del proyecto
 │   │
 │   ├── real-estate/      # Carpeta para el catalogo de modelos
 │   │    ├── index.html   # Página HTML de modelos
-│   │    ├── script.js    # JavaScript específico de modelos
-│   │    └── styles.scss  # Estilos SCSS específicos de modelos
+│   │    └── script.js    # JavaScript específico de modelos
 │   │
 │   │
 │   ├── sales/            # Carpeta de modulo de ventas
 │   │    ├── index.html   # Página HTML de ventas
-│   │    ├── script.js    # JavaScript específico de ventas
-│   │    └── styles.scss  # Estilos SASS específicos de ventas
+│   │    └── script.js    # JavaScript específico de ventas
 │   │
 │   │
 │   ├── shared/           # Carpeta con recursos compartidos y de uso generico
