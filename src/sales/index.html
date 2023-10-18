@@ -32,19 +32,17 @@
 
     <form id="filter-form" class="filter-section">
 
-      <select id="realEstate-filter" class="form-field" placeholder="Modelo de Casa">
-        <!-- LEER DESDE API -->
-        <option value="realEstate1">Casa Alfa</option>
-        <option value="realEstate2">Casa Beta</option>
-        <option value="realEstate3">Casa Teta</option>
+      <select id="real-estate-filter" class="filter-field" placeholder="Modelo de Casa">
+        <option value="" selected>Todos los modelos</option>
+        <!-- Llenaremos las opciones con datos consumidos desde una api -->
       </select>
 
       <input type="text" id="customer-filter" placeholder="Nombre del Cliente" class="filter-field">
       <input type="text" id="salesman-filter" placeholder="Nombre del Vendedor" class="filter-field">
       <input type="date" id="date-filter" placeholder="Precio máximo" class="filter-field">
 
-      <button type="submit" id="apply-filters" class="btn-submit">Aplicar filtros</button>
-      <button type="reset" id="reset-filters" class="btn">Restablecer</button>
+      <button type="submit" id="apply-filters" class="btn-submit">Consultar</button>
+      <button type="reset" id="reset-filters" class="btn">Limpiar</button>
 
     </form>
 
@@ -60,23 +58,24 @@
             <th>Teléfono</th>
             <th>Modelo de Casa</th>
             <th>Vendedor</th>
-            <th>Información Adicional</th>
             <th>Fecha de Venta</th>
-            <th class="text-right">Precio de Venta</th>
+            <th class="text-right">Precio de venta</th>
+            <th>Notas</th>
+            <th></th>
           </tr>
         </thead>
         <tbody id="data-table-body">
-          <!-- LLENAREMOS LA TABLA CON DATOS CONSUMIDOS DESDE UNA API -->
+          <!-- Llenaremos la tabla con datos consumidos desde una api -->
         </tbody>
       </table>
 
     </div>
 
     <div id="message" class="message">
-      <p>No se han realizado ventas.</p>
+      <p>No se ha realizado una consulta de ventas.</p>
     </div>
 
-    <div id="modalBackground" class="modal-background">
+    <div id="modal-background" class="modal-background">
 
     </div>
 
@@ -86,31 +85,28 @@
 
       <form id="sale-form" class="form-section">
 
-        <label for="customer">Cliente:</label>
-        <input type="text" id="customer" class="form-field" required>
+        <label for="customer-name-field">Cliente:</label>
+        <input type="text" id="customer-name-field" class="form-field" required>
 
-        <label for="customerPhone">Teléfono del Cliente:</label>
-        <input type="tel" id="customerPhone" class="form-field" required>
+        <label for="customer-phone-field">Teléfono del Cliente:</label>
+        <input type="tel" id="customer-phone-field" class="form-field" required>
 
-        <label for="realEstate">Modelo de Casa:</label>
-        <select id="realEstate" class="form-field" required>
-          <!-- LEER DESDE API -->
-          <option value="realEstate1">Casa Alfa</option>
-          <option value="realEstate2">Casa Beta</option>
-          <option value="realEstate3">Casa Teta</option>
+        <label for="real-estate-field">Modelo de Casa:</label>
+        <select id="real-estate-field" class="form-field" required>
+          <!-- Llenaremos las opciones con datos consumidos desde una api -->
         </select>
 
-        <label for="salePrice">Precio de Venta:</label>
-        <input type="number" id="salePrice" class="form-field" required>
+        <label for="sale-price-field">Precio de Venta:</label>
+        <input type="number" id="sale-price-field" class="form-field" required>
 
-        <label for="saleDate">Fecha de Venta:</label>
-        <input type="date" id="saleDate" class="form-field" required>
+        <label for="sale-date-field">Fecha de Venta:</label>
+        <input type="date" id="sale-date-field" class="form-field" required>
 
-        <label for="salesman">Vendedor:</label>
-        <input type="text" id="salesman" required>
+        <label for="salesman-field">Vendedor:</label>
+        <input type="text" id="salesman-field" required>
 
-        <label for="notes">Detalles de la Venta:</label>
-        <textarea id="notes" class="form-field" required></textarea>
+        <label for="notes-field">Detalles de la Venta:</label>
+        <textarea id="notes-field" class="form-field" required></textarea>
 
         <button type="submit" class="btn-submit">Guardar Venta</button>
 
@@ -121,6 +117,7 @@
   </main>
 
   <script src="../shared/utils.js"></script>
+  <script src="../shared/fetch-api.js"></script>
   <script src="script.js"></script>
 
 </body>
