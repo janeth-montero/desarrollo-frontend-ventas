@@ -263,6 +263,15 @@ button {
   padding: 1rem 1.5rem;
 }
 
+button.btn {
+  background-color: #f3f6f9;
+  color: #283848;
+}
+
+button.btn:hover {
+  background-color: #e2e9f1;
+}
+
 button.btn-action {
   background-color: #354a5f;
   color: #fff;
@@ -281,13 +290,14 @@ button.btn-submit:hover {
   background-color: #217dba;
 }
 
-button.btn {
-  background-color: #f3f6f9;
-  color: #283848;
+button.btn-delete {
+  background-color: white;
+  border: 2px solid #c77070;
+  color: #c77070;
 }
 
-button.btn:hover {
-  background-color: #e2e9f1;
+button.btn-delete:hover {
+  background-color: #fcf8f8;
 }
 
 .modal-background {
