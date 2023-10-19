@@ -105,7 +105,7 @@ function displaySalesTable(sales) {
       <td>${sale.customerPhone}</td>
       <td>${sale.realEstate}</td>
       <td>${sale.salesman}</td>
-      <td>${sale.saleDate}</td>
+      <td>${formatDate(sale.saleDate)}</td>
       <td class="text-right">${formatCurrency(sale.salePrice)}</td>
       <td>${sale.notes}</td>
       <td>
@@ -215,15 +215,56 @@ function searchSales() {
 function initAddSaleButtonsHandler() {
 
   document.getElementById('addSale').addEventListener('click', () => {
-      document.getElementById('modal-background').style.display = 'block';
-      document.getElementById('modal').style.display = 'block';
+    openAddSaleModal()
   });
 
   document.getElementById('modal-background').addEventListener('click', () => {
-      document.getElementById('modal-background').style.display = 'none';
-      document.getElementById('modal').style.display = 'none';
+    closeAddSaleModal();
   });
 
+  document.getElementById('sale-form').addEventListener('submit', event => {
+    event.preventDefault();
+    processSubmitSale();
+  });
+
+}
+
+
+function openAddSaleModal() {
+  document.getElementById('sale-form').reset();
+  document.getElementById('modal-background').style.display = 'block';
+  document.getElementById('modal').style.display = 'block';
+}
+
+
+function closeAddSaleModal() {
+  document.getElementById('sale-form').reset();
+  document.getElementById('modal-background').style.display = 'none';
+  document.getElementById('modal').style.display = 'none';
+}
+
+
+function processSubmitSale() {
+  const customerName = document.getElementById('customer-name-field').value;
+  const customerPhone = document.getElementById('customer-phone-field').value;
+  const realEstate = document.getElementById('real-estate-field').value;
+  const salePrice = document.getElementById('sale-price-field').value;
+  const saleDate = document.getElementById('sale-date-field').value;
+  const salesman = document.getElementById('salesman-field').value;
+  const notes = document.getElementById('notes-field').value;
+
+  const saleToSave = new Sale(
+    null,
+    customerName,
+    customerPhone,
+    saleDate,
+    salesman,
+    realEstate,
+    parseFloat(salePrice),
+    notes
+  );
+
+  createSale(saleToSave);
 }
 
 
@@ -281,6 +322,7 @@ function displayRealEstateOptions(realEstates) {
 //#region 7. CONSUMO DE DATOS DESDE API
 
 function getRealEstateData() {
+
   fetchAPI(`${apiURL}/real-estate`, 'GET')
     .then(data => {
       const realEstatesList = mapAPIToRealEstateDescriptors(data);
@@ -292,13 +334,25 @@ function getRealEstateData() {
 
 function getSalesData(realEstate, customerName, salesman, saleDate) {
 
-  const url = `${apiURL}/sales`;
+  const url = buildGetSalesDataUrl(realEstate, customerName, salesman, saleDate);
 
   fetchAPI(url, 'GET')
     .then(data => {
       const salesList = mapAPIToSales(data);
       displaySalesView(salesList);
     });
+}
+
+
+function createSale(sale) {
+
+  fetchAPI(`${apiURL}/sales`, 'POST', sale)
+    .then(sale => {
+      closeAddSaleModal();
+      resetSales();
+      window.alert(`Venta ${sale.id} creada correctamente.`);
+    });
+
 }
 
 
@@ -315,6 +369,37 @@ function deleteSale(saleId) {
       });
 
   }
+}
+
+// Funcion que genera la url para consultar ventas con filtros.
+function buildGetSalesDataUrl(realEstate, customerName, salesman, saleDate) {
+  // Tecnica de string dinamico: se aconseja cuando tenemos una cantidad limitada de parámetros y
+  //    cierto control de los tipos de parametros (id, fechas).
+  // const url = `${apiURL}/sales?realEstate=${realEstate}&customerName=${customerName}&salesman=${salesman}&saleDate=${saleDate}`;
+
+  // URL y URLSearchParams: simplifican la construcción de URLs dinámicas y complejas,
+  //    facilitan la gestión de múltiples parámetros y textos dinámicos al encargarse de
+  //    la codificación y decodificación de caracteres especiales, lo que evita problemas
+  //    comunes relacionados con espacios y caracteres no válidos.
+  const url = new URL(`${apiURL}/sales`);
+
+  if (realEstate) {
+    url.searchParams.append('realEstate', realEstate);
+  }
+
+  if (customerName) {
+    url.searchParams.append('customerName', customerName);
+  }
+
+  if (salesman) {
+    url.searchParams.append('salesman', salesman);
+  }
+
+  if (saleDate) {
+    url.searchParams.append('saleDate', saleDate);
+  }
+
+  return url;
 }
 
 //#endregion
