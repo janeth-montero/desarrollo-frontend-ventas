@@ -7,13 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"npm run watch:sass\" \"npm run serve\"",
     "serve": "live-server src",
-    "watch:sass": "node-sass --output-style expanded src/assets/scss/styles.scss src/assets/css/styles.css --watch"
+    "watch:sass": "node-sass --output-style expanded src/assets/scss/styles.scss src/assets/css/styles.css --watch",
+    "calculator": "ts-node-dev --respawn src/ts/calculator.ts"
   },
   "author": "Janeth Montero",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.1",
     "live-server": "^1.2.2",
-    "node-sass": "^9.0.0"
+    "node-sass": "^9.0.0",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
   }
 }
